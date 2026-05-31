@@ -53,20 +53,59 @@ body{
   margin:0 auto 15px;
   display:block;
 }
+
+  .header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:20px;
+  padding-bottom:15px;
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.header-logo{
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+.header-text{
+  text-align:left;
+}
+
+.header-title{
+  font-size:22px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.header-subtitle{
+  font-size:12px;
+  color:#94a3b8;
+  margin-top:4px;
+}
 </style>
 </head>
 <body>
 
 <div class="box">
 
-  <img src="Photos/LOGO2.png" class="logo">
+<div class="header">
 
-<div class="school-name">
- নদেরচাঁদ প্রেমচাঁদ দাস একাডেমী
-</div>
+  <img src="Photos/LOGO2.png" class="header-logo">
 
-<div class="school-sub">
-   ID Verification System
+  <div class="header-text">
+    <div class="header-title">
+      নদেরচাঁদ প্রেমচাঁদ দাস একাডেমী
+    </div>
+
+    <div class="header-subtitle">
+      ID Verification System
+    </div>
+  </div>
+
 </div>
 
 <div id="photo"></div>
