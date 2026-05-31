@@ -44,12 +44,22 @@ body{
   text-align:left;
   line-height:1.8;
 }
-
+.photo{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #22c55e;
+  margin:0 auto 15px;
+  display:block;
+}
 </style>
 </head>
 <body>
 
 <div class="box">
+
+<div id="photo"></div>
 
 <div id="status"></div>
 
@@ -63,43 +73,51 @@ const teachers = [
 {
     name:"মোঃ আছাদুজ্জামান",
     index:"১০০৭২০১",
-    desg:"প্রধান শিক্ষক"
+    desg:"প্রধান শিক্ষক",
+    photo:"Photos/Teachers-and-Staf-Photo/MD-Asaduzzan.jpg",
   },
   {
     name:"মোহাম্মদ হেমায়েত হোসেন",
     index:"৫৬৮৫৯৯৫৮",
-    desg:"সহকারী প্রধান শিক্ষক"
+    desg:"সহকারী প্রধান শিক্ষক",
+        photo:"Photos/Teachers-and-Staf-Photo/Mohammad-Hamayet-Hossain.jpg",
   },
   {
     name:"রেবা পারভীন",
     index:"১০৫২০৪০",
-    desg:"সহকারী শিক্ষক"
+    desg:"সহকারী শিক্ষক",
+        photo:"Photos/Teachers-and-Staf-Photo/Reba-Parvin.jpg",
   },
   {
     name:"মোঃ মিলন মল্লিক",
     index:"১১৪৪২৭৬",
-    desg:"সহকারী শিক্ষক"
+    desg:"সহকারী শিক্ষক",
+        photo:"Photos/Teachers-and-Staf-Photo/MD-Milon_Mollik.jpg",
   },
   {
     name:"মোঃ নাইমুল হাসান",
     index:"৫৬৮৫৯৯৫৭",
-    desg:"সহকারী শিক্ষক"
+    desg:"সহকারী শিক্ষক",
+        photo:"Photos/Teachers-and-Staf-Photo/MD-Naimul-Hasan.jpg",
   },
   {
     name:"বিজিৎ কুমার সাহা",
     index:"১১১০৪৫৫",
-    desg:"সহকারী শিক্ষক"
+    desg:"সহকারী শিক্ষক",
+        photo:"Photos/Teachers-and-Staf-Photo/Bijit-Kumar-Saha.jpg",
   },
 
   {
     name:"এম.এ. মতিন",
     index:"১০৩১৭৫৭",
-    desg:"সহকারী শিক্ষক"
+    desg:"সহকারী শিক্ষক",
+        photo:"Photos/Teachers-and-Staf-Photo/MA-Motin.jpg",
   },
   {
     name:"মোঃ ইমামুল হুসাইন",
     index:"৫৬৮৫৯৯৫৯",
-    desg:"অফিস সহায়ক"
+    desg:"অফিস সহায়ক",
+        photo:"Photos/Teachers-and-Staf-Photo/MD-Emamul-Hossain.jpg",
   },
 ];
 
@@ -113,6 +131,8 @@ if(found){
 
   document.getElementById('status').innerHTML =
     `<div class="ok">✅ VERIFIED</div>`;
+  document.getElementById('photo').innerHTML =
+  `<img src="${found.photo}" class="photo">`;
 
   document.getElementById('info').innerHTML = `
     <b>নাম:</b> ${found.name}<br>
