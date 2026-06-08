@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Entry Form</title>
+</head>
+<body>
+
+<h2>Student / Teacher Data Entry</h2>
+
+<form id="dataForm">
+
+<input type="text" name="name" placeholder="Name" required><br><br>
+<input type="text" name="designation" placeholder="Designation"><br><br>
+<input type="text" name="subject" placeholder="Subject"><br><br>
+<input type="text" name="index" placeholder="Index No"><br><br>
+<input type="date" name="joining"><br><br>
+<input type="date" name="expiry"><br><br>
+<input type="text" name="mobile"><br><br>
+<input type="text" name="blood"><br><br>
+<input type="text" name="photo"><br><br>
+
+<button type="submit">Save</button>
+
+</form>
+
+<script>
+document.getElementById("dataForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = Object.fromEntries(new FormData(this).entries());
+
+  fetch("YOUR_APPS_SCRIPT_URL", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.text())
+  .then(msg => {
+    alert("Saved Successfully!");
+    this.reset();
+  });
+});
+</script>
+
+</body>
+</html>
